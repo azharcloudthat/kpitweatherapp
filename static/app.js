@@ -26,7 +26,7 @@ function setStatus(message, state = "info") {
 
 function setLoading(isLoading) {
     getWeatherButton.disabled = isLoading;
-    getWeatherButton.textContent = isLoading ? "Loading..." : "Get weather";
+    getWeatherButton.textContent = isLoading ? "Checking..." : "Check weather";
     cityInput.disabled = isLoading;
 }
 
