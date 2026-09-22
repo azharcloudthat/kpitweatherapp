@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search current weather and a five-day forecast for any city.">
+    <title>KPIT Weather App</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/app.js" defer></script>
+</head>
+<body>
+    <main class="dashboard-shell">
+        <header class="page-header">
+            <p class="eyebrow">Live conditions</p>
+            <h1>KPIT Weather App</h1>
+            <p class="intro">Find the current conditions and five-day forecast for a city.</p>
+        </header>
+
+        <section class="search-panel" aria-labelledby="search-heading">
+            <h2 id="search-heading">Search by city</h2>
+            <form id="weather-search-form" class="search-form" novalidate>
+                <label for="city-input">City name</label>
+                <div class="search-controls">
+                    <input
+                        id="city-input"
+                        name="city"
+                        type="search"
+                        placeholder="e.g. London"
+                        autocomplete="address-level2"
+                        required
+                    >
+                    <button id="get-weather-button" type="submit">Get weather</button>
+                </div>
+            </form>
+        </section>
+
+        <section
+            id="status-message"
+            class="status-message"
+            role="status"
+            aria-live="polite"
+            hidden
+        ></section>
+
+        <section id="weather-results" class="results-section" aria-labelledby="results-heading" hidden>
+            <div class="results-heading">
+                <div>
+                    <p class="eyebrow">Your forecast</p>
+                    <h2 id="results-heading">Weather for <span id="location-name">-</span></h2>
+                </div>
+                <p id="last-updated" class="last-updated"></p>
+            </div>
+
+            <article class="current-weather" aria-labelledby="current-weather-heading">
+                <div class="current-weather-main">
+                    <p class="eyebrow">Right now</p>
+                    <h3 id="current-weather-heading"><span id="current-condition">-</span></h3>
+                    <p class="current-temperature"><span id="current-temperature">-</span><span aria-label="degrees Celsius">&deg;C</span></p>
+                    <p id="current-feels-like" class="supporting-value"></p>
+                </div>
+                <div id="current-weather-icon" class="weather-icon" aria-hidden="true">--</div>
+            </article>
+
+            <div class="metrics-grid" aria-label="Current weather details">
+                <div class="metric-card">
+                    <span class="metric-label">Humidity</span>
+                    <strong id="humidity-value">-</strong>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Wind</span>
+                    <strong id="wind-value">-</strong>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Precipitation</span>
+                    <strong id="precipitation-value">-</strong>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <div class="section-heading">
+                    <h3>Five-day forecast</h3>
+                </div>
+                <div id="forecast-list" class="forecast-list" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section id="empty-state" class="empty-state" aria-labelledby="empty-heading">
+            <div class="empty-state-icon" aria-hidden="true">+</div>
+            <h2 id="empty-heading">Search for a city to begin</h2>
+            <p>Your weather details will appear here.</p>
+        </section>
+    </main>
+</body>
+</html>
