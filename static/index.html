@@ -11,13 +11,37 @@
 <body>
     <main class="dashboard-shell">
         <header class="page-header">
-            <p class="eyebrow">Live conditions</p>
-            <h1>KPIT Weather App</h1>
-            <p class="intro">Find the current conditions and five-day forecast for a city.</p>
+            <div class="brand-row">
+                <span class="brand-mark" aria-label="KPIT brand">KPIT</span>
+                <span class="brand-tag">Mobility weather intelligence</span>
+            </div>
+            <div class="hero-grid" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p class="eyebrow">Software-defined mobility</p>
+            <h1>Weather visibility aligned to the KPIT look and feel.</h1>
+            <p class="intro">Check live conditions and a five-day forecast through a cleaner interface inspired by KPIT&rsquo;s bold purple, green and dark visual language.</p>
         </header>
 
         <section class="search-panel" aria-labelledby="search-heading">
-            <h2 id="search-heading">Search by city</h2>
+            <div class="panel-copy">
+                <p class="eyebrow">Forecast lookup</p>
+                <h2 id="search-heading">Search by city</h2>
+                <p class="panel-intro">Track current weather details with a dashboard treatment that feels closer to KPIT&rsquo;s corporate website.</p>
+                <ul class="panel-highlights" aria-label="Weather dashboard highlights">
+                    <li>Brand-aligned dark surfaces</li>
+                    <li>Sharper purple and green accents</li>
+                    <li>Clearer forecast presentation</li>
+                </ul>
+            </div>
             <form id="weather-search-form" class="search-form" novalidate>
                 <label for="city-input">City name</label>
                 <div class="search-controls">
@@ -25,11 +49,11 @@
                         id="city-input"
                         name="city"
                         type="search"
-                        placeholder="e.g. London"
+                        placeholder="e.g. Pune"
                         autocomplete="address-level2"
                         required
                     >
-                    <button id="get-weather-button" type="submit">Get weather</button>
+                    <button id="get-weather-button" type="submit">Check weather</button>
                 </div>
             </form>
         </section>
@@ -87,7 +111,7 @@
         <section id="empty-state" class="empty-state" aria-labelledby="empty-heading">
             <div class="empty-state-icon" aria-hidden="true">+</div>
             <h2 id="empty-heading">Search for a city to begin</h2>
-            <p>Your weather details will appear here.</p>
+            <p>Your weather details will appear here in the refreshed KPIT-inspired dashboard.</p>
         </section>
     </main>
 </body>
